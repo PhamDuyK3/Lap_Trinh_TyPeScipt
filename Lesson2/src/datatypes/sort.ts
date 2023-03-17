@@ -65,3 +65,4 @@ function quickSort<T>(arr: T[]): T[] {
   const sortedArr = quickSort(arr1);
   console.log(sortedArr); // [1, 2, 4, 5, 7, 9]
 
+//--------------------END-----------------------------
