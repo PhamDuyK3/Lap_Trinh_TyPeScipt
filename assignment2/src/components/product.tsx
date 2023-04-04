@@ -1,17 +1,23 @@
-const Product = () => {
+import { IProduct } from "../models";
+
+type Props = {
+  data: IProduct,
+}
+
+const Product = ({data}: Props) => {
   return (
     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow  dark:bg-gray-800 dark:border-gray-700">
       <a href="http://localhost:5173/detail">
         <img
           className="p-8 rounded-t-lg m-auto"
-          src="/prd.png"
+          src={data.images?.[0].base_url}
           alt="product image"
         />
       </a>
       <div className="px-5 pb-5">
         <a href="http://localhost:5173/detail">
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-          iPhone 11 64GB I Chính hãng VN/A
+          {data.name}
           </h5>
         </a>
         <div className="flex items-center mt-2.5 mb-5">
@@ -72,10 +78,10 @@ const Product = () => {
         </div>
         <div className="flex items-center justify-between">
           <span className="text-[20px] font-bold text-[#D70018] dark:text-white">
-          10.790.000 ₫
+          {data.price}
           </span>
           <span className="text-[20px] font-bold text-[#707070] dark:text-white">
-          18.000.000 ₫
+          {data.original_price}
           </span>
         </div>
       </div>
